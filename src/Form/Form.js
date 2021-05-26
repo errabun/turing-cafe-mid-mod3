@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import './Form.css'
 
 class Form extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       name: '',
       date: '',
@@ -70,7 +70,10 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
 
-        <button onClick={event => this.makeReservation(newResy)}
+        <button onClick={event => this.makeReservation(event)}>Make Reservation</button>
+      </>
     )
   }
 }
+
+export default Form
