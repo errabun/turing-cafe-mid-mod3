@@ -18,19 +18,15 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  postReservation = (resyDetails) => {
+  addResy = (newResy) => {
     fetch('http://localhost:3001/api/v1/reservations', {
       method: 'POST',
-      body: JSON.stringify(resyDetails),
+      body: JSON.stringify(newResy),
       headers: { 'Content-Type': 'application/json' }
     })
       .then(response => response.json())
-      .then(resy => this.setState({ reservations: [...this.state.reservations, resy] }))
+      .then(resy => this.setState({ reservations: [...this.state.reservations, newResy] }))
       .catch(error => console.log(error))
-  }
-
-  addResy = (newResy) => {
-    this.setState({ reservations: [...this.state.reservations, newResy] })
   }
 
   render() {
