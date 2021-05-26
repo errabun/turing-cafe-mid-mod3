@@ -25,4 +25,13 @@ describe('App', () => {
       .get('input[name="number"]').type(4)
       .get('button').contains('Make Reservation').click()
   })
+
+  it('Should display the new reservation with other reservations', () => {
+    cy.get('input[name="name"]').type('Bryan')
+      .get('input[name="date"]').type('1/13')
+      .get('input[name="time"]').type('12:30')
+      .get('input[name="number"]').type(4)
+      .get('button').contains('Make Reservation').click()
+      .get('h3').contains('Bryan')
+  })
 })
