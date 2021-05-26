@@ -18,7 +18,7 @@ const Reservations = ({ reservations }) => {
 
   return (
     <div className='resy-container'>
-      <{resyDisplay}
+      {resyDisplay}
     </div>
   )
 }
